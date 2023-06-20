@@ -1,0 +1,120 @@
+  <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right, rgb(25, 0, 255), rgb(21, 255, 0));
+        }
+        .info{
+            width: 1000px;
+            height: 1000px;
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            transform: translateY(-50%);
+        }
+        #gola{
+            width: 1000px;
+            height: 1000px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            
+            transform: rotate(0deg);
+            transition: 1s;
+        }
+        .featuer img{width:70px}
+        .featuer{position: absolute;}
+        .one{top: 450px; right: 50px;}
+        .two{top: 50px; right: 480px;
+        transform: rotate(-90deg);}
+        .three{bottom: 450px; left: 50px; transform: rotate(-180deg);}
+        .four{bottom: 50px; right: 450px; transform: rotate(-270deg);}
+
+        .ldk{width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .controls{
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .over{
+            width: 0;
+            height: 0;
+            border-top: 500px solid rgb(255, 255, 255);
+            border-right: 500px solid rgba(0, 0, 0, 0);
+            border-bottom: 500px solid rgb(255, 255, 255);
+            border-left: 500px solid  rgb(255, 255, 255);;
+            position: absolute;
+            left: 0;
+            top: 0;
+        
+        }
+        button{
+            cursor: pointer;
+        }
+        #up{
+            position: absolute;
+            top: -50px;
+            width: 47px;
+        }
+
+        
+        </style>
+ </head>
+ <body>
+    <div class="main">
+<div class="info">
+    <div class="over"></div>
+    <img src="https://purepng.com/public/uploads/large/purepng.com-iphone-xiphone-xapplescreen-21530617565atiut.png" width="700px" class="ldk">
+    <div id="gola">
+        <div class="featuer one"><img src="fb.png" alt=""></div>
+        <div class="featuer two"><img src="insta.png" alt=""></div>
+        <div class="featuer three"><img src="linkedin.png" alt=""></div>
+        <div class="featuer four"><img src="twitter.png" alt=""></div>
+    </div>
+</div>
+<div class="controls">
+    <button id="up">up</button>
+    <button id="down">down</button>
+</div>
+    </div>
+
+<script>
+    var gola = document.getElementById("gola");
+    var up = document.getElementsByTagName("button")[0];
+    var down = document.getElementsByTagName("button")[1];
+    
+    var rotateValue = gola.style.transform; 
+    var rotateSum; 
+
+up.onclick = function(){
+    rotateSum = rotateValue + "rotate(-90deg)";
+    gola.style.transform = rotateSum;
+    rotateValue = rotateSum;
+}
+down.onclick = function(){
+    rotateSum = rotateValue + "rotate(90deg)";
+    gola.style.transform = rotateSum;
+    rotateValue = rotateSum;
+}
+
+</script>
+
+ </body>
+ </html>
